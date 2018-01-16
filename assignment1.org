@@ -16,7 +16,7 @@ Docker [0/3]
 
 Emacs [0/3]
 
-    [ ] install emacs
+    [x] install emacs
     [ ] set up org-bullet and org2jekyll on your emacs
     [ ] [reminder] create a document containing write-ups about what you have learned in this assignment and save as a assignment1.org file
 
