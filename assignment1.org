@@ -1,1 +1,25 @@
 Writeup for Assignment 1
+
+SSH [0/3]
+
+    [x] ssh connection only with ssh-key (you can practice with hulk.soic.indiana.edu)
+    [ ] ssh connection with the bypass of the intermediate server (try to connect to sharks.soic.indiana.edu via hulk.soic.indiana.edu)
+      - I have been unable to get this to work. ssh-ing into sharks.soic.indiana.edu per normal works fine, but it just hangs if I try via gateway.
+    [x] ssh with X-Forwarding (you can test X-forwarding with a light program like gedit)
+      - This worked, but quickly crashed with an error that stated, "attempt to access private resource denied".
+
+Docker [0/3]
+
+    [ ] create a docker image using the iuctf.gitlab.io link below
+    [ ] test it to see if you can update your docker image (For example, in the container run the command "touch /root/aaa" and your new image should contain the aaa file)
+    [ ] migrate a docker image to somewhere else (like a VM) and see if it works
+
+Emacs [0/3]
+
+    [ ] install emacs
+    [ ] set up org-bullet and org2jekyll on your emacs
+    [ ] [reminder] create a document containing write-ups about what you have learned in this assignment and save as a assignment1.org file
+
+[Bonus] Hack you way in and create a hackthebox account
+
+    https://www.hackthebox.eu/invite
