@@ -10,9 +10,10 @@ SSH [0/3]
 
 Docker [0/3]
 
-    [ ] create a docker image using the iuctf.gitlab.io link below
+    [x] create a docker image using the iuctf.gitlab.io link below
     [ ] test it to see if you can update your docker image (For example, in the container run the command "touch /root/aaa" and your new image should contain the aaa file)
       - I can't get Docker to work, going to try restarting my system.
+      - That seems to have worked. Image is building.
     [ ] migrate a docker image to somewhere else (like a VM) and see if it works
 
 Emacs [0/3]
