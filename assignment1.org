@@ -38,3 +38,5 @@ Emacs [2/3]
 [Bonus] Hack you way in and create a hackthebox account
 
     https://www.hackthebox.eu/invite
+
+    The site appears to be down, hopefully for maintainence. I will continue to try to access it, but for now, I'm only getting 404 errors.
