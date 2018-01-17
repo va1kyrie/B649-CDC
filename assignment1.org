@@ -3,6 +3,7 @@ Writeup for Assignment 1
 SSH [2/3]
 
     [x] ssh connection only with ssh-key (you can practice with hulk.soic.indiana.edu)
+      - I've done this before; it worked exactly as I expected it to. :)
     [ ] ssh connection with the bypass of the intermediate server (try to connect to sharks.soic.indiana.edu via hulk.soic.indiana.edu)
       - I have been unable to get this to work. ssh-ing into sharks.soic.indiana.edu per normal works fine, but it just hangs if I try via gateway. Now my computer has restarted, though, I'm going to try again.
         - Nope. Still hangs.
@@ -23,13 +24,13 @@ Docker [3/3]
 
     I'm not sure why Docker had such issues when I first installed it, but restarting my computer seems to have done the trick. Everything works perfectly now, even if making the Docker image took _forever_.
 
-Emacs [1/3]
+Emacs [2/3]
 
     [x] install emacs
     [ ] set up org-bullet and org2jekyll on your emacs
       - org2jekyll is on a package manager for emacs that has some certificate issue. I haven't been able to get emacs to ignore that issue.
-        - Update: have gotten it to ignore the issue, but the URL is returning a 404 error. This seems to be a backend issue. I'm not sure how to fix this at the moment.
-    [ ] [reminder] create a document containing write-ups about what you have learned in this assignment and save as a assignment1.org file
+        - Update: have gotten it to ignore the issue, but the URL is returning a 404 error. This seems to be a backend issue. I'm not sure how to fix this at the moment, so org2jekyll remains uninstalled.
+    [x] [reminder] create a document containing write-ups about what you have learned in this assignment and save as a assignment1.org file
       - What I have learned thus far:
         - Docker assumes you're not going to have any issues at all while setting it up. This is false. Good luck debugging setup.
           - however, in my case at least, turning it on and off again did work. Fortunately.
