@@ -33,7 +33,7 @@ Emacs [2/3]
     [x] [reminder] create a document containing write-ups about what you have learned in this assignment and save as a assignment1.org file
       - What I have learned thus far:
         - Docker assumes you're not going to have any issues at all while setting it up. This is false. Good luck debugging setup.
-          - however, in my case at least, turning it on and off again did work. Fortunately.
+          - However, in my case at least, turning it on and off again did work. Fortunately.
 
 [Bonus] Hack you way in and create a hackthebox account
 
