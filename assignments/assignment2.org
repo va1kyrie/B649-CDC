@@ -1,0 +1,33 @@
+1. Documents your solutions of the last lab (Rubric) [3/3]
+    [x] create a directory "assignments" in your git repo
+    [x] move your old assignment file "assignment1.org" to assignments/
+    [x] create a new file "assignment2.org" with your solutions in assignments/
+        RUBRIC
+            Network
+                [x] Review network config
+                [x] Can your VM connect to www.google.com?
+            Firewall
+                [ ] Review rules list
+                [ ] Add/Edit/Delete rules
+                [ ] What is your firewall strategy?
+            User/permissions
+                [ ] Review current users and permissions
+                [ ] Add/delete users and modify permissions
+                [ ] Are there any suspicious users? What is your strategy for dealing with this?
+            Logs
+                [ ] Where are logs located?
+                [ ] Which logs would you prioritize to notice active attacks/suspicious behavior happening on your system?
+            Processes
+                [ ] Review process list
+                [x] Find suspicious processes (what criteria do you use? e.g. resource consumption?)
+                    - Suspicious processes were identified by a combination of user ID and process name. The process called "spyware". for instance, was killed because anything called "spyware" probably doesn't need to be running.
+                [x] Kill suspicious processes
+2. Emacs + org + jekyll [0/4]
+    [ ] fork the class website
+    [ ] write a org document about SSH regarding what you have learned so far
+    [ ] publish the org document to the Tools > Sysenv menu
+    [ ] make a "pull request" only about the SSH tool to the class repository
+3. SSH [0/3]
+    [ ] setup the direct ssh connection from your local machine to your VMs
+    [ ] run an apache server on your VM and then make it accessible from your local machine
+    [ ] reverse ssh tunneling: disable your ssh config and ssh-in to your VMs from your local machine
