@@ -16,9 +16,11 @@
                 [ ] Are there any suspicious users? What is your strategy for dealing with this?
             Logs
                 [ ] Where are logs located?
+                    - Linux logs are located in /var/log/.
                 [ ] Which logs would you prioritize to notice active attacks/suspicious behavior happening on your system?
+                    - I would prioritize auth.log, /var/log/wtmp, and /var/log/btmp to notice active attacks or suspicious behavior on this system.
             Processes
-                [ ] Review process list
+                [x] Review process list
                 [x] Find suspicious processes (what criteria do you use? e.g. resource consumption?)
                     - Suspicious processes were identified by a combination of user ID and process name. The process called "spyware". for instance, was killed because anything called "spyware" probably doesn't need to be running.
                 [x] Kill suspicious processes
