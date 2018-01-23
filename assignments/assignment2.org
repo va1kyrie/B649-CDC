@@ -26,12 +26,15 @@
                     - Suspicious processes were identified by a combination of user ID and process name. The process called "spyware". for instance, was killed because anything called "spyware" probably doesn't need to be running.
                 [x] Kill suspicious processes
 2. Emacs + org + jekyll [2/4]
-    [x]  fork the class website
+    [x] fork the class website
     [x] write a org document about SSH regarding what you have learned so far
     [ ] publish the org document to the Tools > Sysenv menu
     [ ] make a "pull request" only about the SSH tool to the class repository
-3. SSH [0/3]
-    [ ] setup the direct ssh connection from your local machine to your VMs
-        - I still have not managed this connection.
-    [ ] run an apache server on your VM and then make it accessible from your local machine
-    [ ] reverse ssh tunneling: disable your ssh config and ssh-in to your VMs from your local machine
+3. SSH [3/3]
+    [x] setup the direct ssh connection from your local machine to your VMs
+        - I think I've accomplished this? At least, I can ssh into the VM from the local machine (and from my computer via an ssh connection into the local machine).
+    [x] run an apache server on your VM and then make it accessible from your local machine
+        - Currently half done - apache is installed, but it is not accessible from the local machine because nothing is accessible from the local machine.
+        - Now it is all done. I can see the webpage. It is the default, but it is the webpage.
+    [x] reverse ssh tunneling: disable your ssh config and ssh-in to your VMs from your local machine
+        - Done by default because that is the only way I can access the VM.
