@@ -7,29 +7,31 @@
                 [x] Review network config
                 [x] Can your VM connect to www.google.com?
             Firewall
-                [ ] Review rules list
-                [ ] Add/Edit/Delete rules
-                [ ] What is your firewall strategy?
+                [x] Review rules list
+                [x] Add/Edit/Delete rules
+                [x] What is your firewall strategy?
+                    - The firewall strategy for this system is fairly basic. Outgoing connections are allowed, of course, and incoming SSH connections are as well (because I'm assuming I'm going to figure out what's up with my SSH connections eventually this semester), but other than SSH connections no other incoming connections are allowed.
             User/permissions
-                [ ] Review current users and permissions
-                [ ] Add/delete users and modify permissions
-                [ ] Are there any suspicious users? What is your strategy for dealing with this?
+                [x] Review current users and permissions
+                [x] Add/delete users and modify permissions
+                [x] Are there any suspicious users? What is your strategy for dealing with this?
             Logs
-                [ ] Where are logs located?
+                [x] Where are logs located?
                     - Linux logs are located in /var/log/.
-                [ ] Which logs would you prioritize to notice active attacks/suspicious behavior happening on your system?
+                [x] Which logs would you prioritize to notice active attacks/suspicious behavior happening on your system?
                     - I would prioritize auth.log, /var/log/wtmp, and /var/log/btmp to notice active attacks or suspicious behavior on this system.
             Processes
                 [x] Review process list
                 [x] Find suspicious processes (what criteria do you use? e.g. resource consumption?)
                     - Suspicious processes were identified by a combination of user ID and process name. The process called "spyware". for instance, was killed because anything called "spyware" probably doesn't need to be running.
                 [x] Kill suspicious processes
-2. Emacs + org + jekyll [0/4]
-    [ ] fork the class website
-    [ ] write a org document about SSH regarding what you have learned so far
+2. Emacs + org + jekyll [2/4]
+    [x]  fork the class website
+    [x] write a org document about SSH regarding what you have learned so far
     [ ] publish the org document to the Tools > Sysenv menu
     [ ] make a "pull request" only about the SSH tool to the class repository
 3. SSH [0/3]
     [ ] setup the direct ssh connection from your local machine to your VMs
+        - I still have not managed this connection.
     [ ] run an apache server on your VM and then make it accessible from your local machine
     [ ] reverse ssh tunneling: disable your ssh config and ssh-in to your VMs from your local machine
