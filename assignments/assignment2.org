@@ -15,6 +15,7 @@
                 [x] Review current users and permissions
                 [x] Add/delete users and modify permissions
                 [x] Are there any suspicious users? What is your strategy for dealing with this?
+                    - User "hacker" was suspicious (on the basis of their chosen username) and running suspicious processes; their processes were closed and the user account deleted.
             Logs
                 [x] Where are logs located?
                     - Linux logs are located in /var/log/.
