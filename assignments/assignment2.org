@@ -25,12 +25,13 @@
                 [x] Find suspicious processes (what criteria do you use? e.g. resource consumption?)
                     - Suspicious processes were identified by a combination of user ID and process name. The process called "spyware". for instance, was killed because anything called "spyware" probably doesn't need to be running.
                 [x] Kill suspicious processes
-2. Emacs + org + jekyll [2/4]
+2. Emacs + org + jekyll [3/4]
     [x] fork the class website
     [x] write a org document about SSH regarding what you have learned so far
     [ ] publish the org document to the Tools > Sysenv menu
-    [ ] make a "pull request" only about the SSH tool to the class repository
-3. SSH [3/3]
+        - I am completely unable to install org2jekyll on my Emacs, so I'm not entirely sure if I've done anything correctly here, but I made a pull request and tried my best.
+    [x] make a "pull request" only about the SSH tool to the class repository
+3. SSH [2/3]
     [x] setup the direct ssh connection from your local machine to your VMs
         - I think I've accomplished this? At least, I can ssh into the VM from the local machine (and from my computer via an ssh connection into the local machine).
     [x] run an apache server on your VM and then make it accessible from your local machine
