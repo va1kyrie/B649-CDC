@@ -36,5 +36,5 @@
     [x] run an apache server on your VM and then make it accessible from your local machine
         - Currently half done - apache is installed, but it is not accessible from the local machine because nothing is accessible from the local machine.
         - Now it is all done. I can see the webpage. It is the default, but it is the webpage.
-    [x] reverse ssh tunneling: disable your ssh config and ssh-in to your VMs from your local machine
-        - Done by default because that is the only way I can access the VM.
+    [ ] reverse ssh tunneling: disable your ssh config and ssh-in to your VMs from your local machine
+        - Cannot access this because of the firewall on SOIC computers.
