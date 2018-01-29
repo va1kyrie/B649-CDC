@@ -1,0 +1,44 @@
+
+
+    1. Documents your solutions in assignments/assignment3.org [2/5]
+        [x] make sure your bcfg2 installation is working correctly and there is no error on client/server when running "bcfg2 -qev" [10 points]
+        [x] populate your /etc/hosts config to both your VM (serverVM and clientVM) via bcfgs [20 points]
+        [ ] create a crondjob.xml bundle in the same location as hosts.xml (you can use hosts.xml as a template) [20 points]
+          - I have made this file but cannot get a (very buried, but there) error to go away on the client. It is most annoying.
+        [ ] create bcfg2.genshi (again you can use hosts.genshi as a template) and write a cronjob that runs "bcfg2 -qev" once a day (at your chosen time) on both server and client VMs. Finally, move bcfg2.genshi to /var/lib/bcfg2/Cfg/etc/cron.d [20 points]
+        [ ] [+15 bonus points] create a file $BCFG2_REPO/etc/ip_list.xt containing all the IP addresses of all VMs (refer to the Box spread sheet), where $BCFG2_REPO is /var/lib/bcfg2. Create your new recipe of /etc/hosts/hosts.genshi to read the ip_list.txt file and then make the /etc/hosts file generated with all the IP and hostnames of the class VMs. If possible, sort the list of hosts by hostname (not required but preferred). The hostname should be setup with the following naming rule.
+            Full hostname: vm##-server.soic.indiana.edu
+            Short hostname: vm##-server
+
+        cat /etc/hosts
+        127.0.0.1       localhost
+
+        # The following lines are desirable for IPv6 capable hosts
+        ::1     ip6-localhost ip6-loopback
+        fe00::0 ip6-localnet
+        ff00::0 ip6-mcastprefix
+        ff02::1 ip6-allnodes
+        ff02::2 ip6-allrouters
+
+        # B649 class VMs
+        192.168.122.10        vm10-server.soic.indiana.edu    vm10-server
+        192.168.122.11        vm10-client.soic.indiana.edu    vm10-client
+        192.168.122.63        vm15-server.soic.indiana.edu    vm15-server
+        192.168.122.31        vm15-client.soic.indiana.edu    vm15-client
+        ...
+
+        This is just an example with some fake data
+
+        cat /var/lib/bcfg2/etc/ip_list.txt
+        192.168.122.1,vm01-server
+        192.168.122.2,vm01-client
+        192.168.122.3,vm02-server
+        192.168.122.4,vm02-client
+        ...
+
+        [x] make sure that your VMs are always up and running and keep an eye on that your VMs are not consumming much resource.
+          - done and done. ^_^
+    2. Emacs + org + jekyll [0/3] [30 points]
+        [ ] write a org document about BCFG2 regarding what you have learned so far in the forked repository. If you think that it is more appropriate, please a new file in $FORKED_REPO/org/tools/.
+        [ ] publish the org document to the Tools > Sysenv menu
+        [ ] make a "pull request" only about the BCFG2 tool to the class repository
