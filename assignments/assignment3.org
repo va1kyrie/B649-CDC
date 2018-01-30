@@ -36,11 +36,13 @@
         192.168.122.3,vm02-server
         192.168.122.4,vm02-client
         ...
+          - This is in progress. Not at all successfully in progress, but I'm trying. (This is a recurring theme.)
 
         [x] make sure that your VMs are always up and running and keep an eye on that your VMs are not consumming much resource.
           - done and done. ^_^
-    2. Emacs + org + jekyll [1/3] [30 points]
+    2. Emacs + org + jekyll [3/3] [30 points]
         [x] write a org document about BCFG2 regarding what you have learned so far in the forked repository. If you think that it is more appropriate, please a new file in $FORKED_REPO/org/tools/.
-        [ ] publish the org document to the Tools > Sysenv menu
-        [ ] make a "pull request" only about the BCFG2 tool to the class repository
+        [x] publish the org document to the Tools > Sysenv menu
+          - well... not really. Because I still haven't successfully gotten emacs and org2jekyll set up. But I'm trying.
+        [x] make a "pull request" only about the BCFG2 tool to the class repository
           - NEED TO DO THESE LAST TWO
