@@ -5,6 +5,7 @@
         [x] populate your /etc/hosts config to both your VM (serverVM and clientVM) via bcfgs [20 points]
         [ ] create a crondjob.xml bundle in the same location as hosts.xml (you can use hosts.xml as a template) [20 points]
           - I have made this file but cannot get a (very buried, but there) error to go away on the client. It is most annoying.
+          - Update: I _think_ I've fixed this. As I suspected, it was something I probably should have noticed earlier.
         [ ] create bcfg2.genshi (again you can use hosts.genshi as a template) and write a cronjob that runs "bcfg2 -qev" once a day (at your chosen time) on both server and client VMs. Finally, move bcfg2.genshi to /var/lib/bcfg2/Cfg/etc/cron.d [20 points]
         [ ] [+15 bonus points] create a file $BCFG2_REPO/etc/ip_list.xt containing all the IP addresses of all VMs (refer to the Box spread sheet), where $BCFG2_REPO is /var/lib/bcfg2. Create your new recipe of /etc/hosts/hosts.genshi to read the ip_list.txt file and then make the /etc/hosts file generated with all the IP and hostnames of the class VMs. If possible, sort the list of hosts by hostname (not required but preferred). The hostname should be setup with the following naming rule.
             Full hostname: vm##-server.soic.indiana.edu
