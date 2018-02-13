@@ -1,0 +1,11 @@
+
+Tasks: [2/6]
+
+    [x] Locate and download the pingChat.py script on Github. Make sure that you understand it and can run the code locally to send a word.
+    [x] Modify the sendPing() in the code so that it gets a filename and a server IP and sends the content of the file word by word. You have to include some sort of sequence number so that you can retrieve the message in the server. [40 points]
+    [ ] Modify the listenPing() in the code so that it receives the ICMP packets and reassembles them in a file using the sequence mechanism that you implemented in the previous task. [20 points]
+      - this is kind of done? the sequence mechanism has not been employed as of yet, but everything comes across and is recorded fine.
+    [ ] Open up the wireshark and start capturing the packets on your victim machine (clientVM) [15 points]
+    [ ] Create a text file and paste some random text into it and send it from your clientVM to the serverVM [10 points]
+    [ ] Create a org file namely assignment4.org in the assignment folder of your class repository and briefly describe covert channel and why what you accomplished in this assignment is a covert channel. Include your wireshark screenshot in your org file. (Use the link in the reference) [15 points]
+    [ ] Bonus: implement this covert channel using scapy (10 points)
