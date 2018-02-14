@@ -9,7 +9,6 @@ Tasks: [5/6]
     [x] Open up the wireshark and start capturing the packets on your victim machine (clientVM) [15 points]
     [x] Create a text file and paste some random text into it and send it from your clientVM to the serverVM [10 points]
     [x] Create a org file namely assignment4.org in the assignment folder of your class repository and briefly describe covert channel and why what you accomplished in this assignment is a covert channel. Include your wireshark screenshot in your org file. (Use the link in the reference) [15 points]
-      - need screenshot
     [ ] Bonus: implement this covert channel using scapy (10 points)
 
 Covert Channel
