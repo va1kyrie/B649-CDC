@@ -6,11 +6,15 @@ Tasks: [5/6]
     [x] Modify the listenPing() in the code so that it receives the ICMP packets and reassembles them in a file using the sequence mechanism that you implemented in the previous task. [20 points]
       - this is kind of done? the sequence mechanism has not been employed as of yet, but everything comes across and is recorded fine.
       - this is done
-    [ ] Open up the wireshark and start capturing the packets on your victim machine (clientVM) [15 points]
+    [x] Open up the wireshark and start capturing the packets on your victim machine (clientVM) [15 points]
     [x] Create a text file and paste some random text into it and send it from your clientVM to the serverVM [10 points]
     [x] Create a org file namely assignment4.org in the assignment folder of your class repository and briefly describe covert channel and why what you accomplished in this assignment is a covert channel. Include your wireshark screenshot in your org file. (Use the link in the reference) [15 points]
       - need screenshot
     [ ] Bonus: implement this covert channel using scapy (10 points)
 
 Covert Channel
-A covert channel is an attack that transfers information between processes that should not be able to communicate (or should not be able to communicate in the fashion used by the attack). pingChat and the extensions implemented in this assignment represent such an attack because the ping protocol (ICMP) is being used to send text messages between machines, which is both not what ICMP was intended to do and, unless you're actively monitoring the web traffic, fairly untracable.
+A covert channel is an attack that transfers information between processes that should not be able to communicate (or should not be able to communicate in the fashion used by the attack). pingChat and the extensions implemented in this assignment represent such an attack because the ping protocol (ICMP) is being used to send text messages between machines, which is both not what ICMP was intended to do and, unless you're actively monitoring the web traffic, fairly untracable. For instance, my tests are sending Glouchester's opening monologue from _Richard III_ by William Shakespeare, word by word:
+
+#+CAPTION: A screenshot of my Client VM receiving the opening monologue of _Richard III_.
+#+NAME:   fig:wireshark
+[[../wireshark.png]]
