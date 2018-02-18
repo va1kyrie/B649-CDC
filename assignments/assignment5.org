@@ -1,0 +1,20 @@
+
+Tasks [1/2]
+
+    [x] Retrieve the number of days the key is valid [Hint: start the reversing process from buttonCreateProductKey_Click() ]. Create an org file namely assignment5.org in the assignment folder of your class repository and write how you retrieved the number of days the serial is valid. [100 points]
+    [ ] (Bonus) Retrieve the username and add writeups how you did it if you wrote a script during the reversing process, commit that as well [30 points]
+
+ cathhtkeepaln-wymddd
+
+ *NUMBER OF DAYS KEY IS VALID: 365*
+
+ In order to determine how long the key will be valid, I had to first understand the structure of the key and which parts convey which information. In this case, by stepping through the disassembled code starting at buttonCreateProductKey_Click() as suggested, it is apparent that the key consists of two parts, as shown in this line:
+
+  this.textBoxProductKey.Text = this.ssOut + "-" + str2;
+
+The actual information stored in this.ssOut wasn't interesting at the moment, because other steps in the method indicate the interesting value was str2, which is made by performing two methods (DoR and ToR) on a variable 'int32', upon which a basic error check is performed that warns the user about the valid range of Activation Days. DoR() and ToR() perform some operations on this integer that turn it from a number in Arabic numerals to an obfuscated value represented by lowercase letters. DoR() takes in a character array, reverses it, increments the letters in the array by 1, and returns them in lowercase. ToR() provides that initial character array (or string) from int32; and in this case, ToR()'s return value is just the number represented in Roman numerals. Once I figured out that the part of the product key after the dash was the Roman numeral representation of the length of key validity, reversed and with the letters shifted one to the right, it was relatively easy to figure out the value:
+
+  - wymddd
+  - vxlccc
+  - ccclxv
+  - 100 + 100 + 100 + 50 + 10 + 5 = 365 days
