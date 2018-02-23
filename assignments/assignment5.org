@@ -4,7 +4,7 @@ Tasks [1/2]
     [x] Retrieve the number of days the key is valid [Hint: start the reversing process from buttonCreateProductKey_Click() ]. Create an org file namely assignment5.org in the assignment folder of your class repository and write how you retrieved the number of days the serial is valid. [100 points]
     [ ] (Bonus) Retrieve the username and add writeups how you did it if you wrote a script during the reversing process, commit that as well [30 points]
 
- cathhtkeepaln-wymddd
+ key: cathhtkeepaln-wymddd
 
  *NUMBER OF DAYS KEY IS VALID: 365*
 
