@@ -1,0 +1,5 @@
+Tasks [0/2]
+  [x] Retrieve or bypass the first password from the bianry using radare2. Create an org file namely assignment6.org in the assignment folder of your class repository and write how did you managed to do this. [65 points]
+  [ ] Retrieve or bypass the second password and get the flag. add your write-up to the same assignment6.org file. [35 points]
+
+Getting the first password was fairly straightforward. After opening the crackme.bin file in radare2, I analyzed it using 'aaa' before using 'iz' to see the information held in the data section. This included a string 'SuperSeKretKey'. I then used 's main' to get to the start of the main function and 'pdf' to see the graph of the main function, where 'SuperSeKretKey' is used in strcmp and is compared against user input. This told me that the string was the first password, and I was right.
