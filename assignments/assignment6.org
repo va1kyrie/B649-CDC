@@ -24,4 +24,4 @@ This changed the two lines in the binary to:
 0x00400968      eb00           jmp 0x40096a
 0x0040096a      488d45c0       lea rax, [local_40h]
 ```
-and upon running ./crackme.bin in the command line, I was able to successfully bypass the second password.
+and upon running ./crackme.bin in the command line, I was able to successfully bypass the second password and retrieved the flag: HTB{40b949f92b86b18}
