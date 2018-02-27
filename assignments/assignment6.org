@@ -1,5 +1,27 @@
-Tasks [0/2]
+Tasks [2/2]
   [x] Retrieve or bypass the first password from the bianry using radare2. Create an org file namely assignment6.org in the assignment folder of your class repository and write how did you managed to do this. [65 points]
-  [ ] Retrieve or bypass the second password and get the flag. add your write-up to the same assignment6.org file. [35 points]
+  [x] Retrieve or bypass the second password and get the flag. add your write-up to the same assignment6.org file. [35 points]
 
 Getting the first password was fairly straightforward. After opening the crackme.bin file in radare2, I analyzed it using 'aaa' before using 'iz' to see the information held in the data section. This included a string 'SuperSeKretKey'. I then used 's main' to get to the start of the main function and 'pdf' to see the graph of the main function, where 'SuperSeKretKey' is used in strcmp and is compared against user input. This told me that the string was the first password, and I was right.
+
+The second password, however, proved more of a challenge to me. From my analysis of the code, I believe the 'password' - that is, the string against which user input would be compared - is a runtime-generated string that uses the current time as a means of generation. (This conclusion was drawn based, in large part, on the presence of the time() function in main().) Since figuring out the exact means of generating a string is time- and work- intensive and does not guarantee success in generating correct passwords (especially because of the ultra-time-sensitive nature of the password), I decided to instead patch the binary to bypass the second password. After running radare2 with the -w flag ('r2 ./crackme.bin -w'), I reanalyzed the program to make sure I knew what I was doing and to get the addresses in memory of the lines directly after the second string comparison. There were three lines I was interested in:
+
+```
+0x00400966      85c0           test eax, eax
+0x00400968      eb00           jne 0x400976
+0x0040096a      488d45c0       lea rax, [local_40h]
+```
+
+The 'jne' instruction tells the program to jump to memory address 0x400976 if test did not return 0. If test did return 0, the string comparison succeeded and the program continues past the second password barrier, so instead of jumping further down the program (to exit upon failure), I wanted to just continue onto the next line. I could have replaced the 'jne' instruction with a NOP, I suppose, but I simply replaced it with a 'jmp' instruction to go to the next line:
+
+```
+[0x00400968]> wa jmp 0x0040096a
+```
+
+This changed the two lines in the binary to:
+
+```
+0x00400968      eb00           jmp 0x40096a
+0x0040096a      488d45c0       lea rax, [local_40h]
+```
+and upon running ./crackme.bin in the command line, I was able to successfully bypass the second password.
