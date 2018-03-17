@@ -1,0 +1,67 @@
+
+Tasks [0/2]
+
+    [ ] Create a assignment7.org file in your assignment repository and write relevant things that you learned/found during this assignment. [50]
+       - this is in progress, obivously
+    [ ] Smash the stack and find the flag in the binary. [50]
+
+
+
+- notes:
+
+  PLEASE READ THIS GUIDE CAREFULLY BEFORE STARTING:
+
+  In this assignment you will continue practicing another basic variation of a bufferoverflow attack. The file in this assignment is a modified CGI binary that you will work on locally. You can run the server locally (after unzipping it of course) and see its generated HTML code, gets an input and again generates output. This binary is partially obfuscated, so don't waste your time on directly extracting the flag from it. The easiest way to solve this is overflowing a buffer to write on the return address.
+
+  This assignment is very similar to what we did for 4_radish file in the class with one minor change: You have to write over the return address of the main() function.
+
+  You might find the hints in the note section useful.
+
+  - hints:
+
+  Start early, this assignment is more difficult than previous ones.
+
+  This binary cannot be run on your Mac computer (Linux only).
+
+  Use radare2 to list and check the functions, see if you find anything interesting there.
+
+  Try to find the buffer and calculate its exact or approximate value.
+
+  Try to overwrite the buffer the way we did during the class (with that python script).
+
+  You might find bash scripting useful for this assignment.
+
+  This assignment doesn't need any shellcode or nop sleds and can be solved without them (as we haven't covered them in the class).
+
+  The flag is neither \n!dfloUHraWeKoqS(lP$ )bzJ%l not nice!
+
+  If you got nice! in the output it means you are on the right track.
+
+
+The first thing I have noticed: there are a lot of 0xff characters after main. I have not found "nice!" as indicated by the hints, but I'm assuming it's somewhere at the end of that monstrosity.
+
+Update: I have gotten "nice!" to show up when running tmpserver.cgi:
+
+  ```
+    [helen@leonardo cgi]$ ./tmpserver.cgi
+    Content-type:text/html
+
+    <html>
+    <head>
+    <title>Using GET and POST Methods</title>
+    </head>
+    <body>
+    first_name=hiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii&last_name=yo
+    No text entered for first name
+    <br/>
+    No text entered for last name
+    <br/>
+    nice!
+    <br/>
+    <br/>
+    </body>
+    </html>
+  ```
+I still have next to no idea what I'm doing as of now but after a week of overthinking CGI files and documentation I am finally making progress. I'm counting this as a positive.
+
+I should note that the "nice!" shows up even if I type out "first_name=hi&last_name=yo" instead of the line of i's.
