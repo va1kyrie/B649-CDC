@@ -65,3 +65,5 @@ Update: I have gotten "nice!" to show up when running tmpserver.cgi:
 I still have next to no idea what I'm doing as of now but after a week of overthinking CGI files and documentation I am finally making progress. I'm counting this as a positive.
 
 I should note that the "nice!" shows up even if I type out "first_name=hi&last_name=yo" instead of the line of i's.
+
+"nice!" also shows up if I simply type "hiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii" (or similar). Obviously I am doing something, because a simple "hi" does not trigger "nice!".
