@@ -38,7 +38,7 @@ Tasks [0/2]
   If you got nice! in the output it means you are on the right track.
 
 
-The first thing I have noticed: there are a lot of 0xff characters after main. I have not found "nice!" as indicated by the hints, but I'm assuming it's somewhere at the end of that monstrosity.
+The first thing I have noticed: there are a lot of 0xff characters after main. I have not found "nice!" as indicated by the hints, but I'm assuming it's somewhere at the end of that monstrosity. (Update: it is not. Found it in the middle of main()).
 
 Update: I have gotten "nice!" to show up when running tmpserver.cgi:
 
