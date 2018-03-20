@@ -67,3 +67,12 @@ I still have next to no idea what I'm doing as of now but after a week of overth
 I should note that the "nice!" shows up even if I type out "first_name=hi&last_name=yo" instead of the line of i's.
 
 "nice!" also shows up if I simply type "hiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii" (or similar). Obviously I am doing something, because a simple "hi" does not trigger "nice!".
+
+An update: apparently spring break temporarily killed my brain, because _of course_ what I need to do is make the return statement redirect to the 'sym.win' memory location. The memory location in question is 0x0040116b. Unfortunately, 0x40, 0x11, and 0x6b are not all printable-ASCII-friendly hex numbers (0x11 is 'DC1' - device control 1). 0x40 is '@' and 0x6b is '¶', though, so in theory '¶\x11@' should work. It has not thus far, but I don't know if that's because I'm missing a step or 247 a's followed by that string is overflowing everything in a way I'm not actually intending. I currently get a segmentation fault every time.
+
+Taking advantage of the 'echo' command in order to try to handle that pesky escape character gets me the following:
+```
+$ echo $'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa¶\x11@'
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa¶@
+```
+Copying this into place while running the CGI file just gets me a seg fault. I'm going to continue tomorrow, but for now at least I know what i'm trying to do. Hopefully my brain will continue to wake up from whatever coma spring break put it in.
