@@ -68,11 +68,14 @@ I should note that the "nice!" shows up even if I type out "first_name=hi&last_n
 
 "nice!" also shows up if I simply type "hiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii" (or similar). Obviously I am doing something, because a simple "hi" does not trigger "nice!".
 
-An update: apparently spring break temporarily killed my brain, because _of course_ what I need to do is make the return statement redirect to the 'sym.win' memory location. The memory location in question is 0x0040116b. Unfortunately, 0x40, 0x11, and 0x6b are not all printable-ASCII-friendly hex numbers (0x11 is 'DC1' - device control 1). 0x40 is '@' and 0x6b is '¶', though, so in theory '¶\x11@' should work. It has not thus far, but I don't know if that's because I'm missing a step or 247 a's followed by that string is overflowing everything in a way I'm not actually intending. I currently get a segmentation fault every time.
+An update: apparently spring break temporarily killed my brain, because _of course_ what I need to do is make the return statement redirect to the 'sym.win' memory location. The memory location in question is 0x0040116b. Unfortunately, 0x40, 0x11, and 0x6b are not all printable-ASCII-friendly hex numbers (0x11 is 'DC1' - device control 1). 0x40 is '@' and 0x6b is '¶', though, so in theory '¶\x11@' should work. It has not thus far, but I don't know if that's because I'm missing a step or 247 a's followed by that string is overflowing everything in a way I'm not actually intending. I currently get a segmentation fault every time. (This is admittedly what I want, more or less. I just want something to happen BEFORE the core dump.)
 
 Taking advantage of the 'echo' command in order to try to handle that pesky escape character gets me the following:
 ```
-$ echo $'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa¶\x11@'
+$ echo $'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\x6b\x11\x40'
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa¶@
 ```
 Copying this into place while running the CGI file just gets me a seg fault. I'm going to continue tomorrow, but for now at least I know what i'm trying to do. Hopefully my brain will continue to wake up from whatever coma spring break put it in.
+
+I know exactly what I need to do: I need to put in enough dummy characters ('a' in my case because I know what its hex value is) to put the address (reversed: 0x6b 0x1 0x40) into the return address' place. This has not worked thus far, either because I have put too many a's in before the address or because the address is not being sent to memory in the way I would like.
+I do not know which is my problem.
