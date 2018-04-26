@@ -1,5 +1,5 @@
 
-Tasks [0/2]
+Tasks [2/2]
 
     [x] Create a assignment9.org file in your assignment repository and document any tool or method you used in this assignment. [20]
     [x] Download assignment9.pcap from the reference section, and find the answer to the following questions: [80]
@@ -11,7 +11,7 @@ Tasks [0/2]
           - It is 138.197.108.176.
         What's the leaked flag? [35, 15 points for the final answer]
           - The leaked flag is SKY-EMNI-5857.
-
+Documentation:
 - To start, I'm rather naturally using wireshark to view the contents of the PCAP file. Wireshark's Endpoints tool in the analysis tells me that there are 223 unique IPv4 addresses in the file, so it is now on to figure out which one is leaking information.
 - It has been over two hours. I have tried looking at conversations in Wireshark (where I found out the IP I believe is the local host (192.168.64.137) likes BitTorrent), using 'strings' to see the (countless) strings in the PCAP, and 'foremost' in the stego toolkit to try to extract files. I got 4 GIFs (apparently from a webpage, given their size and appearance) and an entirely black PDF, so it appears to have been less than useful.
 - In the end, it was simply Wireshark that was helpful. 192.168.64.137 and 138.197.108.176 have a series of ICMP packets that did not match the typical string (the ASCII alphabet, punctuation and numbers, or a similar standard string) of a ICMP ping. This is the leak; now to find the flag. (At least I was right, and 192.168.64127 _is_ the leak. It just took me a while to confirm.)
